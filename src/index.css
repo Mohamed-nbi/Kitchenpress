@@ -1,0 +1,90 @@
+@import '@fontsource/fraunces/400.css';
+@import '@fontsource/fraunces/500.css';
+@import '@fontsource/fraunces/600.css';
+@import '@fontsource/fraunces/300-italic.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-cream text-charcoal font-body antialiased;
+}
+
+::selection {
+  background-color: #B48A4E;
+  color: #F7F3EC;
+}
+
+.container-px {
+  @apply px-6 sm:px-8 lg:px-12;
+}
+
+.section-py {
+  @apply py-20 sm:py-28;
+}
+
+.eyebrow {
+  @apply text-xs sm:text-sm tracking-[0.3em] uppercase text-brass font-semibold;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-charcoal text-cream px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-brass hover:text-charcoal hover:shadow-soft active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/25 bg-transparent text-charcoal px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 hover:border-charcoal hover:bg-charcoal hover:text-cream active:scale-[0.98];
+}
+
+.btn-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-cream text-charcoal px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-brass hover:text-charcoal active:scale-[0.98];
+}
+
+.card {
+  @apply rounded-2xl bg-white/60 shadow-card;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CFBF;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B48A4E;
+}
+
+/* Perspective utilities for interactive kitchen */
+.perspective-container {
+  perspective: 1600px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
